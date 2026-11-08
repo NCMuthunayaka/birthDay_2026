@@ -125,6 +125,24 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    const poemBox = document.querySelector(".poemRevealBox");
+    if (!poemBox || !("IntersectionObserver" in window)) {
+      if (poemBox) poemBox.classList.add("poemActive");
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          poemBox.classList.add("poemActive");
+          observer.disconnect();
+        }
+      });
+    }, { rootMargin: "0px 0px -25% 0px", threshold: 0.25 });
+    observer.observe(poemBox);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
     const finalSection = document.querySelector(".finalWish");
     if (!finalSection || !("IntersectionObserver" in window)) return;
     const observer = new IntersectionObserver((entries) => {

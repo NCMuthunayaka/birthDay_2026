@@ -765,7 +765,8 @@ a {
 }
 
 /* Butter-Smooth Hardware-Accelerated Heart Zoom & Fade Out */
-.visible .heartSvg {
+.poemActive .heartSvg,
+.poemRevealBox.visible .heartSvg {
   animation: heartZoomFadeOut 2.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
@@ -802,7 +803,8 @@ a {
               transform 1.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.visible .poemLines {
+.poemActive .poemLines,
+.poemRevealBox.visible .poemLines {
   opacity: 1;
   transform: translateY(0) translateZ(0);
   transition-delay: 1.45s;

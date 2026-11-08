@@ -20,7 +20,7 @@
   <meta name="twitter:title" content="CLICK ME ❤️">
   <meta name="twitter:image" content="https://sudumanika.vercel.app/images/preview.jpg">
 
-  <link rel="stylesheet" href="./birthday.css?v=3">
+  <link rel="stylesheet" href="./birthday.css?v=4">
   <style>
     body { margin: 0; background: #160f12; color: #f3e9dc; }
   </style>
@@ -642,7 +642,7 @@
       wishBtn.textContent = giftOpen ? "Close my little wish" : "One more wish for you ♡";
     });
 
-    // Scroll reveal
+    // Scroll reveal for general sections
     const reveals = document.querySelectorAll("[data-reveal]");
     if ("IntersectionObserver" in window) {
       const revealObserver = new IntersectionObserver((entries) => {
@@ -656,6 +656,28 @@
       reveals.forEach(el => revealObserver.observe(el));
     } else {
       reveals.forEach(el => el.classList.add("visible"));
+    }
+
+    // Dedicated Poem Heart Zoom: Waits until screen reaches the middle of the section before starting
+    const poemRevealBox = document.querySelector(".poemRevealBox");
+    if (poemRevealBox) {
+      if ("IntersectionObserver" in window) {
+        const poemObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              poemRevealBox.classList.add("poemActive");
+              poemObserver.disconnect();
+            }
+          });
+        }, {
+          // Trigger when poem box reaches the middle of the mobile screen
+          rootMargin: "0px 0px -25% 0px",
+          threshold: 0.25
+        });
+        poemObserver.observe(poemRevealBox);
+      } else {
+        poemRevealBox.classList.add("poemActive");
+      }
     }
   </script>
 </body>
