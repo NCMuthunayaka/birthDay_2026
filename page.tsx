@@ -420,24 +420,17 @@ export default function Home() {
             <div className="heartStage" aria-hidden="true">
               <svg className="heartSvg" viewBox="0 0 100 90">
                 <defs>
-                  <linearGradient id="heartGradLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stop-color="#ff758f" />
-                    <stop offset="45%" stop-color="#e01e4a" />
-                    <stop offset="100%" stop-color="#7a0624" />
+                    <stop offset="35%" stop-color="#f72585" />
+                    <stop offset="70%" stop-color="#b5179e" />
+                    <stop offset="100%" stop-color="#7209b7" />
                   </linearGradient>
-                  <linearGradient id="heartGradRight" x1="100%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stop-color="#ff859d" />
-                    <stop offset="45%" stop-color="#ed2d56" />
-                    <stop offset="100%" stop-color="#8a0928" />
-                  </linearGradient>
-                  <filter id="heartGlow" x="-30%" y="-30%" width="160%" height="160%">
-                    <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#ff2a5f" flood-opacity="0.85" />
+                  <filter id="heartGlow" x="-40%" y="-40%" width="180%" height="180%">
+                    <feDropShadow dx="0" dy="0" stdDeviation="7" flood-color="#ff2a5f" flood-opacity="0.9" />
                   </filter>
                 </defs>
-                <g className="heartGroup" filter="url(#heartGlow)">
-                  <path className="heartHalf heartLeft" fill="url(#heartGradLeft)" d="M 50 82 C 45 76 15 54 10 32 C 6 16 18 4 33 4 C 42 4 48 10 50 16 L 50 82 Z" />
-                  <path className="heartHalf heartRight" fill="url(#heartGradRight)" d="M 50 82 C 55 76 85 54 90 32 C 94 16 82 4 67 4 C 58 4 52 10 50 16 L 50 82 Z" />
-                </g>
+                <path className="heartShape" fill="url(#heartGrad)" filter="url(#heartGlow)" d="M 50 82 C 45 76 15 54 10 32 C 6 16 18 4 33 4 C 42 4 48 10 50 16 C 52 10 58 4 67 4 C 82 4 94 16 90 32 C 85 54 55 76 50 82 Z" />
               </svg>
             </div>
 

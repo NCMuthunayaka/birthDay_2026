@@ -733,7 +733,7 @@ a {
   margin: 20px auto 30px;
 }
 
-/* ==================== POEM HEART UNLOCK & REVEAL ==================== */
+/* ==================== POEM HEART ZOOM-IN & REVEAL ==================== */
 .poemRevealBox {
   position: relative;
   min-height: 260px;
@@ -753,110 +753,61 @@ a {
 }
 
 .heartSvg {
-  width: min(280px, 78vw);
-  height: min(250px, 70vw);
-  max-width: 320px;
-  max-height: 290px;
+  width: min(240px, 68vw);
+  height: min(220px, 62vw);
+  max-width: 280px;
+  max-height: 260px;
   overflow: visible;
   opacity: 0;
 }
 
-/* Phase 1: Big Heart blooms into mobile screen, pulses gently (1.4s) */
+/* Heart Zooms In and Fades Out at Large Size */
 .visible .heartSvg {
-  animation: heartBloomIn 1.4s cubic-bezier(0.18, 0.88, 0.32, 1.15) forwards;
+  animation: heartZoomFadeOut 2.0s cubic-bezier(0.2, 0.75, 0.25, 1) forwards;
 }
 
-@keyframes heartBloomIn {
+@keyframes heartZoomFadeOut {
   0% {
     opacity: 0;
-    transform: scale(0.15);
+    transform: scale(0.2);
+    filter: drop-shadow(0 0 10px rgba(255, 45, 90, 0.4));
   }
-  50% {
-    opacity: 1;
-    transform: scale(1.12);
-  }
-  70% {
-    transform: scale(0.96);
-  }
-  85% {
-    /* Tender romantic heartbeat pulse */
-    transform: scale(1.05);
-  }
-  100% {
+  30% {
     opacity: 1;
     transform: scale(1);
+    filter: drop-shadow(0 0 30px rgba(255, 45, 90, 0.85));
   }
-}
-
-/* Phase 2: Heart breaks in two and dissolves outward (starts at 1.4s, takes 1.35s) */
-.visible .heartLeft {
-  transform-origin: 50px 82px;
-  animation: heartBreakLeft 1.35s 1.4s cubic-bezier(0.22, 0.8, 0.36, 1) forwards;
-}
-
-@keyframes heartBreakLeft {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
+  65% {
     opacity: 1;
-  }
-  25% {
-    transform: translate(-35px, -6px) rotate(-8deg);
-    opacity: 0.95;
-  }
-  60% {
-    transform: translate(-85px, 2px) rotate(-18deg);
-    opacity: 0.65;
+    transform: scale(1.4);
+    filter: drop-shadow(0 0 50px rgba(255, 45, 90, 0.95));
   }
   100% {
-    transform: translate(-150px, 16px) rotate(-28deg);
     opacity: 0;
+    transform: scale(2.4);
+    filter: drop-shadow(0 0 80px rgba(255, 45, 90, 0));
     visibility: hidden;
   }
 }
 
-.visible .heartRight {
-  transform-origin: 50px 82px;
-  animation: heartBreakRight 1.35s 1.4s cubic-bezier(0.22, 0.8, 0.36, 1) forwards;
-}
-
-@keyframes heartBreakRight {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-    opacity: 1;
-  }
-  25% {
-    transform: translate(35px, -6px) rotate(8deg);
-    opacity: 0.95;
-  }
-  60% {
-    transform: translate(85px, 2px) rotate(18deg);
-    opacity: 0.65;
-  }
-  100% {
-    transform: translate(150px, 16px) rotate(28deg);
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-/* Phase 3: The poem emerges smoothly as heart splits, fully placed by 3.7s */
+/* The poem emerges smoothly as the heart zooms and fades out */
 .poemLines {
   padding: 27px 15px;
   border-top: 1px solid #d4b08b4c;
   border-bottom: 1px solid #d4b08b4c;
   opacity: 0;
-  transform: translateY(28px) scale(0.96);
+  transform: translateY(24px) scale(0.96);
   filter: blur(8px);
-  transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 1.5s cubic-bezier(0.16, 1, 0.3, 1),
-              filter 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.4s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 1.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .visible .poemLines {
   opacity: 1;
   transform: translateY(0) scale(1);
   filter: blur(0px);
-  transition-delay: 2.1s;
+  transition-delay: 1.35s;
 }
 
 .poemStanza {
