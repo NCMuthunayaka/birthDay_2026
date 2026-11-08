@@ -1,8 +1,18 @@
 {
   "cleanUrls": true,
-  "rewrites": [
-    { "source": "/", "destination": "/index.html" },
-    { "source": "/audio/:match*", "destination": "/public/audio/:match*" },
-    { "source": "/images/:match*", "destination": "/public/images/:match*" }
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    },
+    {
+      "source": "/(.*).mp3",
+      "headers": [
+        { "key": "Content-Type", "value": "audio/mpeg" },
+        { "key": "Accept-Ranges", "value": "bytes" }
+      ]
+    }
   ]
 }

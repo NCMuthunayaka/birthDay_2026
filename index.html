@@ -16,10 +16,14 @@
 <body>
   <main class="birthdayPage">
     <audio id="birthdaySong" loop preload="auto" autoplay playsinline>
-      <source src="./public/audio/birthday-song.mp3" type="audio/mpeg">
-      <source src="/audio/birthday-song.mp3" type="audio/mpeg">
-      <source src="./birthday-song.mp3" type="audio/mpeg">
+      <source src="/birthday-song.mp3" type="audio/mpeg">
       <source src="birthday-song.mp3" type="audio/mpeg">
+      <source src="./birthday-song.mp3" type="audio/mpeg">
+      <source src="/audio/birthday-song.mp3" type="audio/mpeg">
+      <source src="audio/birthday-song.mp3" type="audio/mpeg">
+      <source src="./audio/birthday-song.mp3" type="audio/mpeg">
+      <source src="/public/audio/birthday-song.mp3" type="audio/mpeg">
+      <source src="./public/audio/birthday-song.mp3" type="audio/mpeg">
     </audio>
 
     <!-- 00 / OPENING SCENE -->
@@ -287,7 +291,7 @@
       <div class="memoryStream">
         <article class="memoryItem memoryOne" data-reveal>
           <div class="photoPlaceholder photoTall">
-            <img src="./public/images/memory-01.jpg" alt="A favourite funny memory together" loading="lazy" onerror="handlePhotoError(this, 'images/memory-01.jpg')">
+            <img src="images/memory-01.jpg" alt="A favourite funny memory together" loading="lazy" onerror="handlePhotoError(this, 'memory-01.jpg')">
           </div>
           <div class="memoryCaption">
             <span>THE LAUGHTER</span>
@@ -301,7 +305,7 @@
             <p>Some moments become home without us noticing.</p>
           </div>
           <div class="photoPlaceholder photoSquare">
-            <img src="./public/images/memory-02.jpg" alt="A sweet memory together" loading="lazy" onerror="handlePhotoError(this, 'images/memory-02.jpg')">
+            <img src="images/memory-02.jpg" alt="A sweet memory together" loading="lazy" onerror="handlePhotoError(this, 'memory-02.jpg')">
           </div>
         </article>
 
@@ -312,7 +316,7 @@
 
         <article class="memoryItem memoryThree" data-reveal>
           <div class="photoPlaceholder photoWide">
-            <img src="./public/images/memory-03.jpg" alt="A little adventure together" loading="lazy" onerror="handlePhotoError(this, 'images/memory-03.jpg')">
+            <img src="images/memory-03.jpg" alt="A little adventure together" loading="lazy" onerror="handlePhotoError(this, 'memory-03.jpg')">
           </div>
           <div class="memoryCaption">
             <span>OUR LITTLE ADVENTURE</span>
@@ -323,7 +327,7 @@
         <div class="memoryPair" data-reveal>
           <article>
             <div class="photoPlaceholder photoSquare">
-              <img src="./public/images/memory-04.jpg" alt="A gentle moment together" loading="lazy" onerror="handlePhotoError(this, 'images/memory-04.jpg')">
+              <img src="images/memory-04.jpg" alt="A gentle moment together" loading="lazy" onerror="handlePhotoError(this, 'memory-04.jpg')">
             </div>
             <div class="memoryCaption">
               <span>THE QUIET MAGIC</span>
@@ -332,7 +336,7 @@
           </article>
           <article>
             <div class="photoPlaceholder photoSquare">
-              <img src="./public/images/memory-05.jpg" alt="A funny moment together" loading="lazy" onerror="handlePhotoError(this, 'images/memory-05.jpg')">
+              <img src="images/memory-05.jpg" alt="A funny moment together" loading="lazy" onerror="handlePhotoError(this, 'memory-05.jpg')">
             </div>
             <div class="memoryCaption">
               <span>CAN'T STOP SMILING</span>
@@ -347,7 +351,7 @@
             <p>One picture. A thousand feelings.</p>
           </div>
           <div class="photoPlaceholder photoTall">
-            <img src="./public/images/memory-06.jpg" alt="A special memory together" loading="lazy" onerror="handlePhotoError(this, 'images/memory-06.jpg')">
+            <img src="images/memory-06.jpg" alt="A special memory together" loading="lazy" onerror="handlePhotoError(this, 'memory-06.jpg')">
           </div>
         </article>
       </div>
@@ -434,10 +438,10 @@
       <h2>If I could pause time,<br>I'd keep a few more <em>moments.</em></h2>
       <div class="afterPoemPhotos">
         <div class="photoPlaceholder">
-          <img src="./public/images/memory-07.jpg" alt="Another favourite memory" loading="lazy" onerror="handlePhotoError(this, 'images/memory-07.jpg')">
+          <img src="images/memory-07.jpg" alt="Another favourite memory" loading="lazy" onerror="handlePhotoError(this, 'memory-07.jpg')">
         </div>
         <div class="photoPlaceholder">
-          <img src="./public/images/memory-08.jpg" alt="One more happy memory" loading="lazy" onerror="handlePhotoError(this, 'images/memory-08.jpg')">
+          <img src="images/memory-08.jpg" alt="One more happy memory" loading="lazy" onerror="handlePhotoError(this, 'memory-08.jpg')">
         </div>
       </div>
       <p class="afterPoemCopy">More laughter. More little adventures. More ordinary days that become extraordinary just because we're in them.</p>
@@ -481,12 +485,27 @@
   </main>
 
   <script>
-    function handlePhotoError(img, path) {
+    function handlePhotoError(img, filename) {
+      if (!img.dataset.retry) {
+        img.dataset.retry = "1";
+        img.src = "/images/" + filename;
+        return;
+      }
+      if (img.dataset.retry === "1") {
+        img.dataset.retry = "2";
+        img.src = "./public/images/" + filename;
+        return;
+      }
+      if (img.dataset.retry === "2") {
+        img.dataset.retry = "3";
+        img.src = "/public/images/" + filename;
+        return;
+      }
       const container = img.parentElement;
       img.remove();
       const label = document.createElement("div");
       label.className = "photoPlaceholderLabel";
-      label.innerHTML = `<span>✳</span><b>YOUR PHOTO GOES HERE</b><small>${path}</small>`;
+      label.innerHTML = `<span>✳</span><b>YOUR PHOTO GOES HERE</b><small>${filename}</small>`;
       container.appendChild(label);
     }
 
