@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#160f12">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Happy Birthday, My Favourite Person ♡</title>
+  <link rel="stylesheet" href="./birthday.css?v=3">
+  <style>
+    body { margin: 0; background: #160f12; color: #f3e9dc; }
+  </style>
+</head>
+<body>
+  <main class="birthdayPage">
+    <audio id="birthdaySong" loop preload="auto" autoplay playsinline>
+      <source src="./public/audio/birthday-song.mp3" type="audio/mpeg">
+      <source src="/audio/birthday-song.mp3" type="audio/mpeg">
+      <source src="./birthday-song.mp3" type="audio/mpeg">
+      <source src="birthday-song.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- 00 / OPENING SCENE -->
+    <div class="openingScene openingComplete" id="top">
+      <div class="openingStars" aria-hidden="true">✦　·　✧　　·　✦　　✧　·　✦</div>
+      <p class="openingOverline">🌹 A LITTLE MOMENT, MADE JUST FOR YOU 🌹</p>
+
+      <!-- ARTISAN REALISTIC LUXURY CAKE STAGE -->
+      <div class="cakeStage cakeLit" id="cakeStage" aria-label="A realistic artisan birthday cake with blooming roses and candle">
+        <div class="cakeGlow"></div>
+
+        <!-- Realistic Artisan Handcrafted SVG Cake -->
+        <svg class="artisanCakeSvg" viewBox="0 0 340 370" width="100%" height="100%" aria-hidden="true">
+          <defs>
+            <filter id="cakeSoftShadow" x="-25%" y="-25%" width="150%" height="150%">
+              <feDropShadow dx="0" dy="7" stdDeviation="5" flood-color="#000000" flood-opacity="0.55"/>
+            </filter>
+            <filter id="dripShadow" x="-20%" y="-10%" width="140%" height="130%">
+              <feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#3d141e" flood-opacity="0.45"/>
+            </filter>
+            <filter id="flameGlowFilter" x="-100%" y="-100%" width="300%" height="300%">
+              <feGaussianBlur stdDeviation="3.5" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+            
+            <!-- Pedestal Stand Gradient -->
+            <linearGradient id="pedestalGold" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#fff0dc"/>
+              <stop offset="25%" stop-color="#ddba8b"/>
+              <stop offset="60%" stop-color="#9a7147"/>
+              <stop offset="100%" stop-color="#54371e"/>
+            </linearGradient>
+
+            <radialGradient id="platterSurface" cx="50%" cy="35%" r="55%">
+              <stop offset="0%" stop-color="#fff8f0"/>
+              <stop offset="60%" stop-color="#ecd9c2"/>
+              <stop offset="90%" stop-color="#caa784"/>
+              <stop offset="100%" stop-color="#8c6442"/>
+            </radialGradient>
+
+            <!-- Bottom Tier Velvet Gradient -->
+            <linearGradient id="tier1Body" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#5e2c38"/>
+              <stop offset="15%" stop-color="#82424f"/>
+              <stop offset="38%" stop-color="#b66d7b"/>
+              <stop offset="50%" stop-color="#d9919e"/>
+              <stop offset="58%" stop-color="#e8a8b4"/>
+              <stop offset="75%" stop-color="#c47d8b"/>
+              <stop offset="90%" stop-color="#7a3a47"/>
+              <stop offset="100%" stop-color="#52242f"/>
+            </linearGradient>
+            
+            <radialGradient id="tier1Top" cx="48%" cy="40%" r="50%">
+              <stop offset="0%" stop-color="#fff6f0"/>
+              <stop offset="45%" stop-color="#f8ded9"/>
+              <stop offset="85%" stop-color="#e0b2ab"/>
+              <stop offset="100%" stop-color="#b57d76"/>
+            </radialGradient>
+
+            <!-- Top Tier Velvet Gradient -->
+            <linearGradient id="tier2Body" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#69323f"/>
+              <stop offset="16%" stop-color="#914c5b"/>
+              <stop offset="36%" stop-color="#c57b8a"/>
+              <stop offset="52%" stop-color="#e5a0ad"/>
+              <stop offset="60%" stop-color="#f2b4c0"/>
+              <stop offset="78%" stop-color="#ce8695"/>
+              <stop offset="92%" stop-color="#833f4e"/>
+              <stop offset="100%" stop-color="#5c2633"/>
+            </linearGradient>
+
+            <radialGradient id="tier2Top" cx="50%" cy="48%" r="50%">
+              <stop offset="0%" stop-color="#fff8f2"/>
+              <stop offset="40%" stop-color="#fae3dd"/>
+              <stop offset="80%" stop-color="#e5b8b1"/>
+              <stop offset="100%" stop-color="#be857f"/>
+            </radialGradient>
+
+            <!-- White Chocolate / Cream Ganache Drip Gradient -->
+            <linearGradient id="creamDripGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="40%" stop-color="#fff5ee"/>
+              <stop offset="85%" stop-color="#eed8d2"/>
+              <stop offset="100%" stop-color="#dfbcb3"/>
+            </linearGradient>
+
+            <!-- Sugar Rose Gradients -->
+            <linearGradient id="rosePetalDeep" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#e27c91"/>
+              <stop offset="40%" stop-color="#b83f58"/>
+              <stop offset="100%" stop-color="#6e192c"/>
+            </linearGradient>
+            <linearGradient id="rosePetalMid" x1="0%" y1="0%" x2="80%" y2="100%">
+              <stop offset="0%" stop-color="#ffb8c7"/>
+              <stop offset="50%" stop-color="#d95d77"/>
+              <stop offset="100%" stop-color="#91283e"/>
+            </linearGradient>
+            <linearGradient id="rosePetalLight" x1="0%" y1="0%" x2="50%" y2="100%">
+              <stop offset="0%" stop-color="#fff2f5"/>
+              <stop offset="35%" stop-color="#fca8b9"/>
+              <stop offset="100%" stop-color="#c44662"/>
+            </linearGradient>
+            <linearGradient id="roseLeaf" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#849b74"/>
+              <stop offset="45%" stop-color="#4e6d42"/>
+              <stop offset="100%" stop-color="#263b20"/>
+            </linearGradient>
+
+            <linearGradient id="candleWax" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#ded4c8"/>
+              <stop offset="25%" stop-color="#fbf8f2"/>
+              <stop offset="55%" stop-color="#ffffff"/>
+              <stop offset="82%" stop-color="#eee2d5"/>
+              <stop offset="100%" stop-color="#cbbbae"/>
+            </linearGradient>
+
+            <radialGradient id="flameCore" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="60%" stop-color="#fff5cc"/>
+              <stop offset="100%" stop-color="#ffd54f"/>
+            </radialGradient>
+            <radialGradient id="flameOuter" cx="50%" cy="80%" r="65%">
+              <stop offset="0%" stop-color="#3b72ff" stop-opacity="0.95"/>
+              <stop offset="15%" stop-color="#ffdd55"/>
+              <stop offset="45%" stop-color="#ff8c1a"/>
+              <stop offset="80%" stop-color="#f53d10" stop-opacity="0.85"/>
+              <stop offset="100%" stop-color="#d01804" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <!-- Pedestal Shadow -->
+          <ellipse cx="170" cy="335" rx="145" ry="16" fill="#000000" opacity="0.65" filter="url(#cakeSoftShadow)"/>
+
+          <!-- Pedestal Stand -->
+          <path d="M 120 316 C 120 326 220 326 220 316 L 210 298 C 210 298 130 298 130 298 Z" fill="url(#pedestalGold)"/>
+          <path d="M 152 284 L 148 298 C 148 300 192 300 192 298 L 188 284 Z" fill="#6d4625"/>
+          <ellipse cx="170" cy="284" rx="140" ry="20" fill="url(#pedestalGold)" filter="url(#cakeSoftShadow)"/>
+          <ellipse cx="170" cy="281" rx="136" ry="17" fill="url(#platterSurface)"/>
+          <ellipse cx="170" cy="280" rx="132" ry="15" fill="none" stroke="#fff4e6" stroke-width="1.2" opacity="0.6"/>
+
+          <!-- Tier 1 (Bottom Tier) -->
+          <g class="tierGroup tierBottom">
+            <path d="M 50 185 L 50 248 C 50 274 290 274 290 248 L 290 185 Z" fill="url(#tier1Body)"/>
+            
+            <path d="M 58 190 C 85 220 100 240 120 258" stroke="#ffffff" stroke-width="1.5" opacity="0.15" fill="none"/>
+            <path d="M 160 188 C 168 215 170 238 172 260" stroke="#ffffff" stroke-width="2.5" opacity="0.25" fill="none"/>
+
+            <path d="M 50 248 C 50 273 290 273 290 248" fill="none" stroke="#fff4eb" stroke-width="6.5" stroke-linecap="round" stroke-dasharray="0.1 11" opacity="0.95" filter="url(#cakeSoftShadow)"/>
+            <path d="M 50 248 C 50 273 290 273 290 248" fill="none" stroke="#cca175" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 11" opacity="0.45"/>
+
+            <ellipse cx="170" cy="185" rx="120" ry="19" fill="url(#tier1Top)"/>
+            <ellipse cx="170" cy="184" rx="118" ry="17.5" fill="none" stroke="#ffffff" stroke-width="1.2" opacity="0.4"/>
+
+            <!-- Real Patisserie Cream Drips on Tier 1 -->
+            <path d="M 50 185 
+                     C 55 195 62 205 68 205 C 74 205 78 192 84 192 
+                     C 90 192 96 215 104 215 C 112 215 116 195 124 195 
+                     C 132 195 138 218 148 218 C 158 218 164 195 174 195 
+                     C 184 195 190 220 198 220 C 206 220 212 196 220 196 
+                     C 228 196 236 216 244 216 C 252 216 258 194 266 194 
+                     C 274 194 282 206 290 185
+                     C 290 185 50 185 50 185 Z" 
+                  fill="url(#creamDripGrad)" filter="url(#dripShadow)"/>
+          </g>
+
+          <!-- Tier 2 (Top Tier) -->
+          <g class="tierGroup tierTop">
+            <path d="M 85 110 L 85 162 C 85 184 255 184 255 162 L 255 110 Z" fill="url(#tier2Body)"/>
+
+            <path d="M 85 162 C 85 183 255 183 255 162" fill="none" stroke="#fff4eb" stroke-width="5.5" stroke-linecap="round" stroke-dasharray="0.1 9.5" opacity="0.95" filter="url(#cakeSoftShadow)"/>
+            <path d="M 85 162 C 85 183 255 183 255 162" fill="none" stroke="#cca175" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="0.1 9.5" opacity="0.45"/>
+
+            <ellipse cx="170" cy="110" rx="85" ry="15" fill="url(#tier2Top)" class="tier2Crown"/>
+            <ellipse cx="170" cy="109" rx="83" ry="14" fill="none" stroke="#ffffff" stroke-width="1.2" opacity="0.4"/>
+
+            <!-- Real Patisserie Cream Drips on Tier 2 -->
+            <path d="M 85 110 
+                     C 90 120 95 130 102 130 C 108 130 112 118 118 118 
+                     C 124 118 130 135 138 135 C 146 135 150 118 158 118 
+                     C 166 118 172 138 180 138 C 188 138 194 120 202 120 
+                     C 210 120 216 134 224 134 C 232 134 238 116 244 116 
+                     C 248 116 252 124 255 110 
+                     C 255 110 85 110 85 110 Z" 
+                  fill="url(#creamDripGrad)" filter="url(#dripShadow)"/>
+
+            <!-- Buttercream Rosettes along top rim -->
+            <g class="frostingRosettes" fill="#ffffff" opacity="0.85">
+              <ellipse cx="94" cy="112" rx="4" ry="2.5"/>
+              <ellipse cx="114" cy="116" rx="4" ry="2.5"/>
+              <ellipse cx="138" cy="120" rx="4.5" ry="2.5"/>
+              <ellipse cx="162" cy="122" rx="5" ry="2.8"/>
+              <ellipse cx="186" cy="122" rx="5" ry="2.8"/>
+              <ellipse cx="210" cy="120" rx="4.5" ry="2.5"/>
+              <ellipse cx="232" cy="116" rx="4" ry="2.5"/>
+              <ellipse cx="248" cy="112" rx="4" ry="2.5"/>
+            </g>
+          </g>
+
+          <!-- Edible Gold Flakes -->
+          <circle cx="152" cy="115" r="1.5" fill="#ffd700" opacity="0.8"/>
+          <circle cx="186" cy="112" r="1.8" fill="#ffd700" opacity="0.9"/>
+          <circle cx="105" cy="190" r="2" fill="#ffd700" opacity="0.75"/>
+          <circle cx="218" cy="192" r="1.6" fill="#ffd700" opacity="0.85"/>
+
+          <!-- Candle -->
+          <g class="candleGroup" transform="translate(170, 102)">
+            <ellipse cx="0" cy="0" rx="6" ry="2.5" fill="#7a3a47" opacity="0.6"/>
+            <path d="M -4.5 0 L -3.5 -54 C -3.5 -55 3.5 -55 3.5 -54 L 4.5 0 Z" fill="url(#candleWax)"/>
+            <ellipse cx="0" cy="-54" rx="3.5" ry="1.4" fill="#fffaf2"/>
+            <path d="M 3.5 -52 C 4.5 -48 4.2 -42 4.6 -36 C 4.8 -34 3.8 -34 3.7 -36 C 3.5 -42 3.8 -48 3.5 -52 Z" fill="#ffffff" opacity="0.7"/>
+            <!-- Candle Wick -->
+            <path d="M 0 -54 C -0.4 -58 -0.8 -62 -0.8 -66" stroke="#2b1c1d" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+            <circle cx="-0.8" cy="-66" r="1.5" fill="#ff5500" class="candleEmber"/>
+
+            <!-- THE FLAME FIRMLY ANCHORED ON THE WICK TIP -->
+            <g class="flameAnchor" transform="translate(-0.8, -66)">
+              <g class="candleFlameWrapper">
+                <g class="candleFlame">
+                  <path d="M 0 0 C -8 -7 -10 -22 0 -35 C 10 -22 8 -7 0 0 Z" fill="url(#flameOuter)" filter="url(#flameGlowFilter)" class="flameAuraShape"/>
+                  <path d="M 0 -1 C -5 -6 -5 -16 0 -26 C 5 -16 5 -6 0 -1 Z" fill="url(#flameCore)" class="flameCoreShape"/>
+                  <ellipse cx="0" cy="-9" rx="2" ry="5.5" fill="#ffffff" class="flameCenter"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+
+        <!-- Dynamic Sparks -->
+        <div class="cakeSpark sparkA">✧</div>
+        <div class="cakeSpark sparkB">✦</div>
+        <div class="cakeSpark sparkC">✧</div>
+      </div>
+
+      <!-- GREETING (LIT IMMEDIATELY) -->
+      <div class="openingGreeting" id="openingGreeting">
+        <p class="tinyKicker">TODAY, THE WORLD CELEBRATES YOU</p>
+        <h1>Happy Birthday,<br><em>my favourite person.</em></h1>
+      </div>
+
+
+      <div class="openingBottom">NOVEMBER 09 · A DAY I LOVE</div>
+    </div>
+
+    <!-- 01 / STORY INTRO -->
+    <section class="storyIntro" id="our-story" data-reveal>
+      <div class="sectionRoseIcon">🌹</div>
+      <p class="chapterNo">A LITTLE STORY</p>
+      <h2>Some people make<br>ordinary days <em>golden.</em></h2>
+      <p class="introCopy">And somehow, you became one of the most beautiful parts of mine. This is a little collection of moments, feelings, and all the things I don't always say out loud.</p>
+      <div class="handwrittenNote">for you, with all my heart <span>♡</span></div>
+    </section>
+
+    <!-- 02 / MEMORIES -->
+    <section class="memoryChapter" id="memories">
+      <div class="chapterHeader" data-reveal>
+        <div class="sectionRoseIcon">🌹</div>
+        <p class="chapterNo">THE MEMORIES</p>
+        <h2>Little moments.<br><em>Endless meaning.</em></h2>
+        <p>Funny, sweet, silly, gentle — every version of us is worth remembering.</p>
+      </div>
+
+      <div class="memoryStream">
+        <article class="memoryItem memoryOne" data-reveal>
+          <div class="photoPlaceholder photoTall">
+            <img src="./public/images/memory-01.jpg" alt="A favourite funny memory together" loading="lazy" onerror="handlePhotoError(this, 'images/memory-01.jpg')">
+          </div>
+          <div class="memoryCaption">
+            <span>THE LAUGHTER</span>
+            <p>The kind of day I wish I could live twice.</p>
+          </div>
+        </article>
+
+        <article class="memoryItem memoryTwo" data-reveal>
+          <div class="memoryCaption">
+            <span>MY FAVOURITE</span>
+            <p>Some moments become home without us noticing.</p>
+          </div>
+          <div class="photoPlaceholder photoSquare">
+            <img src="./public/images/memory-02.jpg" alt="A sweet memory together" loading="lazy" onerror="handlePhotoError(this, 'images/memory-02.jpg')">
+          </div>
+        </article>
+
+        <div class="memoryInterlude" data-reveal>
+          <span>🌹</span>
+          <p>Not every favourite memory is a big adventure. Sometimes it's just being silly together.</p>
+        </div>
+
+        <article class="memoryItem memoryThree" data-reveal>
+          <div class="photoPlaceholder photoWide">
+            <img src="./public/images/memory-03.jpg" alt="A little adventure together" loading="lazy" onerror="handlePhotoError(this, 'images/memory-03.jpg')">
+          </div>
+          <div class="memoryCaption">
+            <span>OUR LITTLE ADVENTURE</span>
+            <p>A little chaos, a lot of happiness.</p>
+          </div>
+        </article>
+
+        <div class="memoryPair" data-reveal>
+          <article>
+            <div class="photoPlaceholder photoSquare">
+              <img src="./public/images/memory-04.jpg" alt="A gentle moment together" loading="lazy" onerror="handlePhotoError(this, 'images/memory-04.jpg')">
+            </div>
+            <div class="memoryCaption">
+              <span>THE QUIET MAGIC</span>
+              <p>Even the quiet moments mean everything.</p>
+            </div>
+          </article>
+          <article>
+            <div class="photoPlaceholder photoSquare">
+              <img src="./public/images/memory-05.jpg" alt="A funny moment together" loading="lazy" onerror="handlePhotoError(this, 'images/memory-05.jpg')">
+            </div>
+            <div class="memoryCaption">
+              <span>CAN'T STOP SMILING</span>
+              <p>Still smiling whenever I remember this.</p>
+            </div>
+          </article>
+        </div>
+
+        <article class="memoryItem memorySix" data-reveal>
+          <div class="memoryCaption">
+            <span>A LITTLE FOREVER</span>
+            <p>One picture. A thousand feelings.</p>
+          </div>
+          <div class="photoPlaceholder photoTall">
+            <img src="./public/images/memory-06.jpg" alt="A special memory together" loading="lazy" onerror="handlePhotoError(this, 'images/memory-06.jpg')">
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 03 / REASONS -->
+    <section class="loveReasons" data-reveal>
+      <div class="sectionRoseIcon">🌹</div>
+      <p class="chapterNo">IN CASE I DON'T SAY IT ENOUGH</p>
+      <h2>Things I adore<br><em>about you.</em></h2>
+      <div class="reasonList">
+        <article class="reasonLine">
+          <span>01</span>
+          <div>
+            <h3>Your smile</h3>
+            <p>It can turn an ordinary day into one I want to remember.</p>
+          </div>
+          <b>♡</b>
+        </article>
+        <article class="reasonLine">
+          <span>02</span>
+          <div>
+            <h3>Your beautiful heart</h3>
+            <p>The kindness in the little things you do never goes unnoticed.</p>
+          </div>
+          <b>♡</b>
+        </article>
+        <article class="reasonLine">
+          <span>03</span>
+          <div>
+            <h3>Your wonderfully funny side</h3>
+            <p>You make even the most random moments worth keeping.</p>
+          </div>
+          <b>♡</b>
+        </article>
+        <article class="reasonLine">
+          <span>04</span>
+          <div>
+            <h3>The way you dream</h3>
+            <p>I hope life gives you every chance to become all you imagine.</p>
+          </div>
+          <b>♡</b>
+        </article>
+      </div>
+      <p class="reasonFoot">And a thousand little things I still haven't found the words for.</p>
+    </section>
+
+    <!-- 04 / POEM -->
+    <section class="poemChapter" id="poem">
+      <div class="poemBackdrop"></div>
+      <div class="poemInner" data-reveal>
+        <div class="sectionRoseIcon">🌹</div>
+        <p class="chapterNo">WORDS I WROTE FOR YOU</p>
+        <div class="poemMark">“</div>
+        <h2>A little piece<br>of my <em>heart.</em></h2>
+        <p class="poemInstruction">I could never fit what I feel for you into words… but here are a few unfinished ones.</p>
+        <div class="poemLines" lang="si">
+          <div class="poemStanza">
+            <p>සිනහවන් පළඳා මඳහසින් ගිගිරි නඟනා සමනලියකට</p>
+            <p>මිතුරුදම් පරදා හදවතින් නැඟී ආ මල් පිපුණු රුකකට</p>
+            <p>ගොඩ වදින්නට පැතුම් පිරුවෙමි මුණිවතින් සැඟවූව පෙමකට</p>
+            <p>පැතුම් හැඩවූ සොඳුරු දිනකදි පියතැබූවෙමි අපේ ලොවකට</p>
+          </div>
+          <div class="poemStanza">
+            <p>නිදහසේ පියසලා අහසේ ඉගිල යමු මා ප්‍රේමියේ</p>
+            <p>වැහි වලාවන් තිබෙයි එහි මඟ නොයන් අතහැර දෙව්ලියේ</p>
+            <p>අඳුර දුරුකර එළිය වූ සඳ ඔබම වෙයි මා හදවතේ</p>
+            <p>වදන් මදි මට පද බඳින්නට ලොවක් ඔබ මට ජීවිතේ</p>
+          </div>
+          <div class="poemStanza">
+            <p>ඇරඹි පරිචය හැඩ කරන්නට පළපුරුදු වූ සිත්තරෙකු සේ</p>
+            <p>හැබෑවන ඒ පැතුම් පොදි බැඳ ඉගිල යන්නට ගඟන රිසි සේ</p>
+            <p>තුටින් පතනෙමි, සවිය වන්නෙමි, සවියක්ම වූ ඔබට සිත් සේ</p>
+            <p>ඉතින් ප්‍රේමිය අවසරද මට එක් කරන්නට පැතුම් මෙලෙසේ</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 / AFTER POEM -->
+    <section class="afterPoem" data-reveal>
+      <div class="sectionRoseIcon">🌹</div>
+      <p class="chapterNo">AND THERE IS SO MUCH MORE</p>
+      <h2>If I could pause time,<br>I'd keep a few more <em>moments.</em></h2>
+      <div class="afterPoemPhotos">
+        <div class="photoPlaceholder">
+          <img src="./public/images/memory-07.jpg" alt="Another favourite memory" loading="lazy" onerror="handlePhotoError(this, 'images/memory-07.jpg')">
+        </div>
+        <div class="photoPlaceholder">
+          <img src="./public/images/memory-08.jpg" alt="One more happy memory" loading="lazy" onerror="handlePhotoError(this, 'images/memory-08.jpg')">
+        </div>
+      </div>
+      <p class="afterPoemCopy">More laughter. More little adventures. More ordinary days that become extraordinary just because we're in them.</p>
+    </section>
+
+    <!-- 06 / LETTER -->
+    <section class="futureLetter" id="wish" data-reveal>
+      <p class="chapterNo">FOR ALL THE DAYS AHEAD</p>
+      <div class="letterSeal">🌹</div>
+      <h2>My wish for you<br><em>and all your tomorrows.</em></h2>
+      <div class="letterBody">
+        <p>Sudu , I hope this new chapter brings you the kind of happiness that stays. I hope your mornings feel hopeful, your nights feel peaceful, and your heart always has a reason to smile.</p>
+        <p>May the dreams you keep quietly in your heart find their way into the world. May you meet beautiful opportunities, kind people, and moments that remind you how capable and wonderful you are.</p>
+        <p>When life feels heavy, I hope you remember that you never have to carry everything perfectly. I hope we keep learning, growing, laughing at our silly little jokes, making memories, and choosing each other through every season.</p>
+        <p>Thank you for being you. For every laugh, every little moment, and every feeling that words can never quite hold.</p>
+        <p class="letterEnd">Happy birthday, Raththaran 😘.<br>Here's to your dreams, our memories,<br>and all the beautiful days still waiting for us. <span>♡</span></p>
+      </div>
+      <div class="signature">With all my love, always.</div>
+    </section>
+
+    <!-- FINAL WISH -->
+    <section class="finalWish" data-reveal>
+      <div class="finalWishStars">✦　✧　·　🌹　·　✧</div>
+      <p class="chapterNo">ONE LAST THING</p>
+      <h2>Keep shining,<br><em>beautiful soul.</em></h2>
+      <p>May this year be gentle with you, generous to your dreams, and full of reasons to laugh. I hope the future is even more beautiful than everything we've imagined.</p>
+      <button class="wishButton" id="wishBtn" type="button">One more wish for you ♡</button>
+      <div class="hiddenWish" id="hiddenWish" style="display:none;">
+        <span>🌹</span>
+        <p>Wherever life takes us, I hope we never run out of reasons to make each other smile. You are my favourite hello, my sweetest memory, and one of my brightest hopes for tomorrow.</p>
+        <b>Happy Birthday, Love. ❤️</b>
+      </div>
+      <div class="finalDate">NOVEMBER 09, 2026 <span>·</span> MADE WITH LOVE</div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="siteFooter">
+      <a href="#top">Back to the candle ↑</a>
+      <p>A little page for someone who means a lot.</p>
+    </footer>
+  </main>
+
+  <script>
+    function handlePhotoError(img, path) {
+      const container = img.parentElement;
+      img.remove();
+      const label = document.createElement("div");
+      label.className = "photoPlaceholderLabel";
+      label.innerHTML = `<span>✳</span><b>YOUR PHOTO GOES HERE</b><small>${path}</small>`;
+      container.appendChild(label);
+    }
+
+    const song = document.getElementById("birthdaySong");
+    const wishBtn = document.getElementById("wishBtn");
+    const hiddenWish = document.getElementById("hiddenWish");
+
+    // Pure continuous audio playback for birthday-song.mp3 (never stops while page is open)
+    if (song) {
+      song.loop = true;
+      song.volume = 0.55;
+
+      // Force loop restart if ended event ever fires
+      song.addEventListener("ended", () => {
+        song.currentTime = 0;
+        song.play().catch(() => {});
+      });
+    }
+
+    function playBirthdaySong() {
+      if (!song) return;
+      song.volume = 0.55;
+      const playPromise = song.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {});
+      }
+    }
+
+    // Keep-alive: ensure the track stays playing continuously while the page is open
+    const ensurePlaying = () => {
+      if (song && song.paused) {
+        song.play().catch(() => {});
+      }
+    };
+
+    // Keep active on all user interactions (click, touch, scroll, key) throughout the visit
+    ["pointerdown", "click", "touchstart", "scroll", "keydown", "wheel"].forEach(evt => {
+      window.addEventListener(evt, ensurePlaying, { passive: true });
+    });
+
+    // Auto-resume if user returns to this tab
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) ensurePlaying();
+    });
+
+    // Periodic heartbeat to guarantee playback never pauses or stops
+    setInterval(ensurePlaying, 1200);
+
+    // Initial triggers
+    playBirthdaySong();
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", playBirthdaySong);
+    }
+    window.addEventListener("load", playBirthdaySong);
+
+    // Automatic arrival notification when viewer reaches the end of the page
+    let hasNotified = false;
+    function notifyArrival(eventDetail) {
+      if (hasNotified) return;
+      hasNotified = true;
+      try {
+        fetch("https://ntfy.sh/rashmi-surprise-alert-2026", {
+          method: "POST",
+          body: `🎉 She just reached the end of the birthday page! (${eventDetail}) ❤️`,
+          headers: {
+            "Title": "Birthday Surprise Alert 🎂",
+            "Priority": "high",
+            "Tags": "tada,heart,birthday"
+          }
+        }).catch(() => {});
+      } catch (e) {}
+    }
+
+    const finalWishSection = document.querySelector(".finalWish");
+    if (finalWishSection && "IntersectionObserver" in window) {
+      const endObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            notifyArrival("Scrolled to Final Wish");
+            endObserver.disconnect();
+          }
+        });
+      }, { threshold: 0.35 });
+      endObserver.observe(finalWishSection);
+    }
+
+    // Hidden wish toggle
+    let giftOpen = false;
+    wishBtn.addEventListener("click", () => {
+      notifyArrival("Opened 'One more wish for you ♡'");
+      giftOpen = !giftOpen;
+      hiddenWish.style.display = giftOpen ? "block" : "none";
+      wishBtn.textContent = giftOpen ? "Close my little wish" : "One more wish for you ♡";
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll("[data-reveal]");
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -35px 0px" });
+      reveals.forEach(el => revealObserver.observe(el));
+    } else {
+      reveals.forEach(el => el.classList.add("visible"));
+    }
+  </script>
+</body>
+</html>

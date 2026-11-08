@@ -1,0 +1,8 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/audio/:match*", "destination": "/public/audio/:match*" },
+    { "source": "/images/:match*", "destination": "/public/images/:match*" }
+  ]
+}
