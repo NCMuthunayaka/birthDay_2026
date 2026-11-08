@@ -408,24 +408,54 @@
         <div class="poemMark">“</div>
         <h2>A little piece<br>of my <em>heart.</em></h2>
         <p class="poemInstruction">I could never fit what I feel for you into words… but here are a few unfinished ones.</p>
-        <div class="poemLines" lang="si">
-          <div class="poemStanza">
-            <p>සිනහවන් පළඳා මඳහසින් ගිගිරි නඟනා සමනලියකට</p>
-            <p>මිතුරුදම් පරදා හදවතින් නැඟී ආ මල් පිපුණු රුකකට</p>
-            <p>ගොඩ වදින්නට පැතුම් පිරුවෙමි මුණිවතින් සැඟවූව පෙමකට</p>
-            <p>පැතුම් හැඩවූ සොඳුරු දිනකදි පියතැබූවෙමි අපේ ලොවකට</p>
+
+        <!-- Poem Box with Heart Break Animation -->
+        <div class="poemRevealBox">
+          <div class="heartStage" aria-hidden="true">
+            <svg class="heartSvg" viewBox="0 0 100 90">
+              <defs>
+                <linearGradient id="heartGradLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ff758f"/>
+                  <stop offset="45%" stop-color="#e01e4a"/>
+                  <stop offset="100%" stop-color="#7a0624"/>
+                </linearGradient>
+                <linearGradient id="heartGradRight" x1="100%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#ff859d"/>
+                  <stop offset="45%" stop-color="#ed2d56"/>
+                  <stop offset="100%" stop-color="#8a0928"/>
+                </linearGradient>
+                <filter id="heartGlow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#ff2a5f" flood-opacity="0.85"/>
+                </filter>
+              </defs>
+              <g class="heartGroup" filter="url(#heartGlow)">
+                <!-- Left Half of Heart -->
+                <path class="heartHalf heartLeft" fill="url(#heartGradLeft)" d="M 50 82 C 45 76 15 54 10 32 C 6 16 18 4 33 4 C 42 4 48 10 50 16 L 50 82 Z"/>
+                <!-- Right Half of Heart -->
+                <path class="heartHalf heartRight" fill="url(#heartGradRight)" d="M 50 82 C 55 76 85 54 90 32 C 94 16 82 4 67 4 C 58 4 52 10 50 16 L 50 82 Z"/>
+              </g>
+            </svg>
           </div>
-          <div class="poemStanza">
-            <p>නිදහසේ පියසලා අහසේ ඉගිල යමු මා ප්‍රේමියේ</p>
-            <p>වැහි වලාවන් තිබෙයි එහි මඟ නොයන් අතහැර දෙව්ලියේ</p>
-            <p>අඳුර දුරුකර එළිය වූ සඳ ඔබම වෙයි මා හදවතේ</p>
-            <p>වදන් මදි මට පද බඳින්නට ලොවක් ඔබ මට ජීවිතේ</p>
-          </div>
-          <div class="poemStanza">
-            <p>ඇරඹි පරිචය හැඩ කරන්නට පළපුරුදු වූ සිත්තරෙකු සේ</p>
-            <p>හැබෑවන ඒ පැතුම් පොදි බැඳ ඉගිල යන්නට ගඟන රිසි සේ</p>
-            <p>තුටින් පතනෙමි, සවිය වන්නෙමි, සවියක්ම වූ ඔබට සිත් සේ</p>
-            <p>ඉතින් ප්‍රේමිය අවසරද මට එක් කරන්නට පැතුම් මෙලෙසේ</p>
+
+          <div class="poemLines" lang="si">
+            <div class="poemStanza">
+              <p>සිනහවන් පළඳා මඳහසින් ගිගිරි නඟනා සමනලියකට</p>
+              <p>මිතුරුදම් පරදා හදවතින් නැඟී ආ මල් පිපුණු රුකකට</p>
+              <p>ගොඩ වදින්නට පැතුම් පිරුවෙමි මුණිවතින් සැඟවූව පෙමකට</p>
+              <p>පැතුම් හැඩවූ සොඳුරු දිනකදි පියතැබූවෙමි අපේ ලොවකට</p>
+            </div>
+            <div class="poemStanza">
+              <p>නිදහසේ පියසලා අහසේ ඉගිල යමු මා ප්‍රේමියේ</p>
+              <p>වැහි වලාවන් තිබෙයි එහි මඟ නොයන් අතහැර දෙව්ලියේ</p>
+              <p>අඳුර දුරුකර එළිය වූ සඳ ඔබම වෙයි මා හදවතේ</p>
+              <p>වදන් මදි මට පද බඳින්නට ලොවක් ඔබ මට ජීවිතේ</p>
+            </div>
+            <div class="poemStanza">
+              <p>ඇරඹි පරිචය හැඩ කරන්නට පළපුරුදු වූ සිත්තරෙකු සේ</p>
+              <p>හැබෑවන ඒ පැතුම් පොදි බැඳ ඉගිල යන්නට ගඟන රිසි සේ</p>
+              <p>තුටින් පතනෙමි, සවිය වන්නෙමි, සවියක්ම වූ ඔබට සිත් සේ</p>
+              <p>ඉතින් ප්‍රේමිය අවසරද මට එක් කරන්නට පැතුම් මෙලෙසේ</p>
+            </div>
           </div>
         </div>
       </div>
