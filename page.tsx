@@ -46,16 +46,17 @@ export default function Home() {
   function notifyArrival(eventDetail: string) {
     if (hasNotifiedRef.current) return;
     hasNotifiedRef.current = true;
+    const url = "https://ntfy.sh/rashmi-surprise-alert-2026?title=Birthday+Surprise+Alert&priority=high&tags=tada,heart,birthday";
+    const message = `🎉 She just reached the end of the birthday page! (${eventDetail}) ❤️`;
     try {
-      fetch("https://ntfy.sh/rashmi-surprise-alert-2026", {
-        method: "POST",
-        body: `🎉 She just reached the end of the birthday page! (${eventDetail}) ❤️`,
-        headers: {
-          "Title": "Birthday Surprise Alert 🎂",
-          "Priority": "high",
-          "Tags": "tada,heart,birthday",
-        },
-      }).catch(() => {});
+      if (typeof navigator !== "undefined" && navigator.sendBeacon) {
+        navigator.sendBeacon(url, message);
+      }
+    } catch {
+      // Silently handled
+    }
+    try {
+      fetch(url, { method: "POST", body: message, mode: "no-cors" }).catch(() => {});
     } catch {
       // Silently handled
     }
